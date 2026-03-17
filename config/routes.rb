@@ -2,9 +2,10 @@ Rails.application.routes.draw do
   get 'lists/new'
   post 'lists' => 'lists#create'
   get 'lists' => 'lists#index'
-  get "lists/edit"
   get '/top' => 'homes#top'
   get 'lists/:id' => 'lists#show', as: 'list'
+  get 'lists/:id/edit' => 'lists#edit', as: 'edit_list'
+  patch 'lists/:id' => 'lists#update', as: 'update_list'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
