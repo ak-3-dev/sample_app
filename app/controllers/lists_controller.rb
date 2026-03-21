@@ -10,7 +10,7 @@ class ListsController < ApplicationController
       redirect_to list_path(@list.id)
     else
       flash.now[:alert] = "投稿に失敗しました。"
-      render:new
+      render :new, status: :unprocessable_entity
     end
   end
 
