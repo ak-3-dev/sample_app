@@ -4,7 +4,7 @@
     <%= image_tag list.image, size: "200x200" %>
     <div class="list-comment">
       <span class="list-body"><%= list.body %></span>
-      <span class="list-title"><%=link_to list.titke, list_path(list.id) %></span>
+      <span class="list-title"><%=link_to list.title, list_path(list.id) %></span>
     </div>
   </div>
 <% end %>

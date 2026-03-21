@@ -1,4 +1,11 @@
 <h1>新規投稿</h1>
+
+<div>
+  <% flash.each do |key, message| %>
+    <p class="<%= key %>"<%= message %></p>
+  <% end %>
+</div>
+
 <% if @list.errors.any? %>
   <%= @list.errors.count %>件のエラーが発生しました
   <ul>
@@ -8,7 +15,7 @@
   </ul>
 <% end %>
 
-<%= form_with model: @list,url: '/lists', method: :post do |f| %>
+<%= form_with model: @list, url: '/lists', method: :post do |f| %>
   <h4>タイトル</h4>
   <%= f.text_field :title %>
 
